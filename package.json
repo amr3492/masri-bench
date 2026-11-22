@@ -1,0 +1,1 @@
+{"name":"masri-bench","version":"1.0.0","private":false,"type":"module","description":"Local-first evaluation and quality checks for Egyptian Arabic text datasets","scripts":{"test":"node --test test.mjs","analyze":"node cli.mjs demo.jsonl --out report.json"},"engines":{"node":">=20"}}
