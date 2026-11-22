@@ -110,7 +110,7 @@ export function auditDataset(rows) {
   const records = Array.isArray(rows) ? rows : [];
   const ids = new Map();
   const texts = new Map();
-  const labelCounts = {};
+  const labelCounts = new Map();
   const emptyText = [];
   const missingGold = [];
   const missingPrediction = [];
@@ -127,7 +127,7 @@ export function auditDataset(rows) {
     if (!text) emptyText.push(rowNumber);
     else lengths.push([...text].length);
     if (!gold) missingGold.push(rowNumber);
-    else labelCounts[gold] = (labelCounts[gold] ?? 0) + 1;
+    else labelCounts.set(gold, (labelCounts.get(gold) ?? 0) + 1);
     if (!predicted) missingPrediction.push(rowNumber);
     if (id) {
       if (ids.has(id)) duplicateIds.push({ id, rows: [ids.get(id), rowNumber] });
@@ -149,7 +149,7 @@ export function auditDataset(rows) {
     missingPrediction,
     duplicateIds,
     duplicateTexts,
-    labelCounts,
+    labelCounts: Object.fromEntries(labelCounts),
     textLength: {
       min: lengths.length ? lengths.reduce((minimum, length) => Math.min(minimum, length), Infinity) : 0,
       median: median(lengths),
