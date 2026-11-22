@@ -1,0 +1,24 @@
+{"id":"demo-01","text":"الخدمة كانت ممتازة وسريعة جدا","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"train"}
+{"id":"demo-02","text":"التوصيل اتأخر والطلب وصل بايظ","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"train"}
+{"id":"demo-03","text":"وصلني الطلب امبارح بعد العصر","gold":"neutral","predicted":"neutral","annotatorA":"neutral","annotatorB":"neutral","split":"train"}
+{"id":"demo-04","text":"بجد تجربة حلوة وهطلب تاني","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"train"}
+{"id":"demo-05","text":"مش فاهم السعر شامل الشحن ولا لأ","gold":"neutral","predicted":"neutral","annotatorA":"neutral","annotatorB":"question","split":"train"}
+{"id":"demo-06","text":"خدمة سيئة ومحدش رد على رسالتي","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"train"}
+{"id":"demo-07","text":"المنتج شكله كويس زي الصور","gold":"positive","predicted":"neutral","annotatorA":"positive","annotatorB":"positive","split":"train"}
+{"id":"demo-08","text":"ممكن اعرف مواعيد العمل يوم الجمعة؟","gold":"neutral","predicted":"neutral","annotatorA":"question","annotatorB":"neutral","split":"train"}
+{"id":"demo-09","text":"اللون مختلف تماما عن اللي طلبته","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"train"}
+{"id":"demo-10","text":"تسلموا يا جماعة المنتج جميل جدا","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"validation"}
+{"id":"demo-11","text":"عايز اغير عنوان التوصيل قبل ما الطلب يطلع","gold":"neutral","predicted":"neutral","annotatorA":"neutral","annotatorB":"neutral","split":"validation"}
+{"id":"demo-12","text":"بقالي اسبوع مستني ومفيش اي تحديث","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"validation"}
+{"id":"demo-13","text":"ممتاز جدا وسعره مناسب","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"validation"}
+{"id":"demo-14","text":"هل ينفع الاستبدال من الفرع؟","gold":"neutral","predicted":"neutral","annotatorA":"question","annotatorB":"question","split":"validation"}
+{"id":"demo-15","text":"التغليف كان مفتوح لما وصل","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"validation"}
+{"id":"demo-16","text":"المقاس مظبوط والخامة حلوة","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"validation"}
+{"id":"demo-17","text":"المندوب اتصل قبل ما يوصل بعشر دقايق","gold":"neutral","predicted":"neutral","annotatorA":"neutral","annotatorB":"neutral","split":"validation"}
+{"id":"demo-18","text":"مش هكرر التجربة دي تاني","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"validation"}
+{"id":"demo-19","text":"حلو قوي ومش غالي","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"test"}
+{"id":"demo-20","text":"طلبت مقاس تاني بالغلط","gold":"neutral","predicted":"negative","annotatorA":"neutral","annotatorB":"neutral","split":"test"}
+{"id":"demo-21","text":"مش راضي يشتغل من اول مرة","gold":"negative","predicted":"negative","annotatorA":"negative","annotatorB":"negative","split":"test"}
+{"id":"demo-22","text":"خدمة محترمة وسريعة","gold":"positive","predicted":"positive","annotatorA":"positive","annotatorB":"positive","split":"test"}
+{"id":"demo-23","text":"عايز اتأكد ان اللون اسود","gold":"neutral","predicted":"neutral","annotatorA":"neutral","annotatorB":"neutral","split":"test"}
+{"id":"demo-24","text":"الطلب وصل متأخر بس المنتج ممتاز","gold":"mixed","predicted":"positive","annotatorA":"mixed","annotatorB":"positive","split":"test"}
