@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { auditDataset, classificationMetrics, cohenKappa, confusionMatrix, normalizeArabicText, parseCsv, parseDataset, tokenize } from "./core.mjs";
+import { auditDataset, buildEvaluationReport, classificationMetrics, cohenKappa, confusionMatrix, normalizeArabicText, parseCsv, parseDataset, tokenize } from "./core.mjs";
 
 test("Arabic normalization removes diacritics, tatweel and common Alef variants", () => {
   assert.equal(normalizeArabicText("إِحْمَـد ١٢٣"), "احمد 123");
@@ -67,4 +67,39 @@ test("Cohen's kappa is computed over complete pairs only", () => {
   assert.equal(result.observed, 0.75);
   assert.equal(result.expected, 0.5);
   assert.equal(result.value, 0.5);
+});
+
+
+test("Arabic digit normalization handles all ten digits and zero", () => {
+  assert.equal(normalizeArabicText("٠١٢٣٤٥٦٧٨٩"), "0123456789");
+});
+
+test("dataset parser selects CSV for auto mode and keeps an empty dataset safe", () => {
+  assert.deepEqual(parseDataset("id,text,gold\n1,مرحبا,positive"), [{ id: "1", text: "مرحبا", gold: "positive" }]);
+  assert.deepEqual(parseDataset("\ufeff  ", "auto"), []);
+});
+
+test("evaluation report keeps quality, model, and agreement counts tied to supplied rows", () => {
+  const report = buildEvaluationReport([{ text: "ممتاز", gold: "positive", predicted: "positive", annotatorA: "a", annotatorB: "a" }]);
+  assert.equal(report.recordCount, 1);
+  assert.equal(report.model.compared, 1);
+  assert.equal(report.agreement.compared, 1);
+  assert.match(report.note, /supplied rows/u);
+});
+
+test("Arabic digit normalization handles all ten digits and zero", () => {
+  assert.equal(normalizeArabicText("٠١٢٣٤٥٦٧٨٩"), "0123456789");
+});
+
+test("dataset parser auto-detects CSV and treats whitespace-only input as empty", () => {
+  assert.deepEqual(parseDataset("id,text,gold\n1,مرحبا,positive"), [{ id: "1", text: "مرحبا", gold: "positive" }]);
+  assert.deepEqual(parseDataset("  \ufeff  ", "auto"), []);
+});
+
+test("evaluation report derives quality, metrics, and agreement from supplied rows", () => {
+  const report = buildEvaluationReport([{ text: "ممتاز", gold: "positive", predicted: "positive", annotatorA: "a", annotatorB: "a" }]);
+  assert.equal(report.recordCount, 1);
+  assert.equal(report.model.compared, 1);
+  assert.equal(report.agreement.compared, 1);
+  assert.match(report.note, /supplied rows/u);
 });
